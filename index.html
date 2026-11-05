@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Suivi Intermittence</title>
+<!-- Lanceur seulement : il porte l'icône de l'appli et ouvre la page mobile (privée) sur claude.ai.
+     Aucune donnée ici. -->
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0b1816">
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+    background: #0b1816; color: #e2efec; font-family: "Segoe UI", system-ui, Roboto, sans-serif; text-align: center; padding: 24px; box-sizing: border-box; }
+  img { width: 112px; height: 112px; border-radius: 28px; }
+  a { color: #78e0da; font-weight: 600; font-size: 17px; }
+  p { color: #7c9e97; max-width: 30ch; margin: 0; }
+</style>
+</head>
+<body>
+<img src="icone-192.png" alt="">
+<a id="lien" href="https://claude.ai/artifact/VZ9LU4xWs6ArXwREKWZ5Hy">Ouvrir Suivi Intermittence</a>
+<p id="aide">Ouverture…</p>
+<script>
+  // Une fois l'icône installée, ouvrir directement la page mobile
+  const installe = matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: minimal-ui)').matches
+  if (installe) location.replace(document.getElementById('lien').href)
+  else document.getElementById('aide').textContent = 'Pour l’icône sur l’écran d’accueil : menu ⋮ de Chrome → « Ajouter à l’écran d’accueil » → « Installer ».'
+</script>
+</body>
+</html>
